@@ -6,14 +6,14 @@ import './Comment.css';
 const Comment = props => {
   return (
     <div className="comment-text">
-      <span className="comment">{props.comment.text}</span>{' '}
-      <span className="user">-{props.comment.username}</span>
+      <span className="comment">{props.com.text}</span>{' '}
+      <span className="user">-{props.com.username}</span>
     </div>
   );
 };
 
 Comment.propTypes = {
-  comment: PropTypes.shape({
+  com: PropTypes.shape({
     text: PropTypes.string,
     username: PropTypes.string
   })
