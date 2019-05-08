@@ -13,13 +13,13 @@ const SearchBar = props => {
       </div>
       <div className="social-wrap">
         <div className="social">
-          <i className="far fa-compass" />
+          <i className="far ig-compass" />
         </div>
         <div className="social">
-          <i className="far fa-heart" />
+          <i className="far ig-heart" />
         </div>
         <div className="social">
-          <i className="far fa-user-circle" />
+          <i className="far ig-circle" />
         </div>
       </div>
     </div>

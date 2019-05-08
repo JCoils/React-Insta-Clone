@@ -5,7 +5,7 @@ import PostsContainer from './components/PostsContainer/PostsContainer';
 import SearchBar from './components/SearchBar/SearchBarContainer';
 
 class App extends Component {
-state = {
+    state = {
       posts: [],
       filteredPosts: []
     };
