@@ -1,9 +1,21 @@
 import React from 'react';
-import CommentSection from '../CommentSection/CommentSectionContainer';
-import PostHeader from './PostHeader';
-import './Post.css';
-import Like from './Like'
 import PropTypes from 'prop-types';
+import CommentSection from '../CommentSection/CommentSectionContainer';
+import LikeSection from './LikeSection';
+import PostHeader from './PostHeader';
+import styled from 'styled-components';
+
+import './Posts.css';
+
+const PostBorder = styled.div`
+  border: 1px solid #d3d3d3;
+  margin: 15px 0;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+`;
+
+const PostImage = styled.img`
+  width: 100%;
+`;
 
 class Post extends React.Component {
   constructor(props) {
@@ -12,25 +24,21 @@ class Post extends React.Component {
       likes: props.post.likes
     };
   }
+
   incrementLike = () => {
     let likes = this.state.likes + 1;
     this.setState({ likes });
   };
+
   render() {
     return (
-      <div className="post-border">
+      <PostBorder>
         <PostHeader
           username={this.props.post.username}
           thumbnailUrl={this.props.post.thumbnailUrl}
         />
-        <div className="post-image-wrap">
-          <img
-            alt="post thumbnail"
-            className="post-image"
-            src={this.props.post.imageUrl}
-          />
-        </div>
-        <Like
+        <PostImage alt="post thumbnail" src={this.props.post.imageUrl} />
+        <LikeSection
           incrementLike={this.incrementLike}
           likes={this.state.likes}
         />
@@ -38,7 +46,7 @@ class Post extends React.Component {
           postId={this.props.post.imageUrl}
           comments={this.props.post.comments}
         />
-      </div>
+      </PostBorder>
     );
   }
 }
